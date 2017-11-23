@@ -34,7 +34,10 @@ namespace SignatureService
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("default", "api/{controller}/{action}/{id}");
+            });
         }
     }
 }
